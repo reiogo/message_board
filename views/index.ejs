@@ -4,6 +4,15 @@
     <title>Homepage</title>
   </head>
   <body>
-    <p> hello </p>
+    <%- include('navbar', {links:links}) %>
+    <h1> <%= title %></h1>
+      <%messages.forEach((message) => { %>
+        <div class = "message-box">
+            <h3> <%= message.text%> </h3>
+            <p> <%= message.user%> </p>
+            <p> <%= message.added%> </p>
+            <a href="/message?id=<%=message.id%>">info</a>
+        </div>
+      <% }); %>
   </body>
 </html>

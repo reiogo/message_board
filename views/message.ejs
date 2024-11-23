@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/styles.css">
+    <title>Homepage</title>
+  </head>
+  <body>
+    <%- include('navbar', {links:links}) %>
+    <h1> <%= title %></h1>
+      <ul>
+      <% const currentMessage = messages.find((message) => messageId == message.id) %>
+        <li> <%=currentMessage.text%> </li>
+        <li> <%=currentMessage.user%> </li>
+        <li> <%=currentMessage.added%> </li>
+      </ul>
+  </body>
+</html>
